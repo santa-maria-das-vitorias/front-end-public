@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full max-h-screen overflow-hidden rounded-lg shadow-lg">
+  <div class="relative w-full max-h-screen overflow-hidden">
     <!-- Slider Container -->
     <div
       class="flex transition-all duration-700 ease-in-out w-full h-[70vh]"
