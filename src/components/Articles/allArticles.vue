@@ -75,7 +75,6 @@ export default {
     async loadArticles() {
       try {
         const data = await fetchLatestArticlesMajor();
-        console.log(data); // Verifique se `categoriaslug` está presente nos artigos
         this.articles = data;
       } catch (error) {
         console.error('Erro ao carregar artigos:', error);
