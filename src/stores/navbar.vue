@@ -49,7 +49,7 @@ const contactLinks = [
   {
     icon: 'pi pi-map-marker',
     href: 'https://maps.app.goo.gl/qVXDhUGzRXxjSUMx8',
-    label: 'Localização',
+    label: "Localização",
   },
   {
     icon: 'pi pi-envelope',

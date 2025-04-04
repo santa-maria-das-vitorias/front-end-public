@@ -30,7 +30,7 @@
           class="flex-shrink-0 px-1 sm:px-2 h-full"
           :style="{ width: `${100 / slidesPerView}%` }"
         >
-          <div class="h-full flex flex-col rounded-lg shadow-lg overflow-hidden bg-white">
+          <div class="h-full flex flex-col overflow-hidden bg-white">
             <div class="relative overflow-hidden h-60 sm:h-96">
               <img
                 :src="evento.image"

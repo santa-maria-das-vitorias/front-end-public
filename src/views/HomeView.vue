@@ -76,6 +76,7 @@
           <h1 class="text-4xl font-bold relative">Artigos</h1>
         </div>
       </div>
+      <allArticles :max-posts="3" />
     </div>
 
     <div 
@@ -128,19 +129,19 @@
 <script>
 import CarouselSlide from '@/components/Home/carouselSlide.vue';
 import Slider from "@/components/Home/slider.vue";
-import Avatar from "primevue/avatar";
 import LatestArticles from "@/components/Articles/latestArticles.vue";
 import socialbuttons from "@/components/socialbuttons.vue";
 import EventosSlider from "@/components/Home/EventosSlider.vue";
+import allArticles from "@/components/Articles/allArticles.vue";
 
 export default {
   components: {
     Slider,
     LatestArticles,
     socialbuttons,
-    Avatar,
     CarouselSlide,
-    EventosSlider
+    EventosSlider,
+    allArticles
   },
   data() {
     return {

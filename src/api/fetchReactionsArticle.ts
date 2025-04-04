@@ -16,7 +16,7 @@ interface FetchReactionsArticleParams {
   articleSlug: string;
 }
 
-const cache = new LRUCache<string, ArticleStats>({ max: 100, ttl: 1000 * 60 * 60 }); // Cache até 100 artigos por 1 hora
+const cache = new LRUCache<string, ArticleStats>({ max: 500, ttl: 1000 * 60 * 60 }); // Cache até 100 artigos por 1 hora
 
 export const fetchReactionsArticle = async ({ articleSlug }: FetchReactionsArticleParams): Promise<ArticleStats> => {
   const cachedStats = cache.get(articleSlug);
