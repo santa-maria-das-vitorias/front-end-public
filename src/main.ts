@@ -29,6 +29,41 @@ app.use(PrimeVue, {
     tooltip: 1100
   },
 });
-app.use(router)
+
+const defaultMeta = {
+  title: 'Capela Santa Maria das Vitórias',
+  description: 'Bem-vindo à Capela Santa Maria das Vitórias. Conheça nossa história, eventos e artigos.',
+  image: '/default-share-image.jpg', // Caminho para a imagem padrão
+};
+
+app.use(router);
+
+// Atualizar meta tags dinamicamente
+router.afterEach((to) => {
+  const meta = to.meta as { title?: string; description?: string; image?: string } || {};
+  document.title = meta.title || defaultMeta.title;
+
+  // Atualizar meta description
+  const descriptionTag = document.querySelector('meta[name="description"]');
+  if (descriptionTag) {
+    descriptionTag.setAttribute('content', meta.description || defaultMeta.description);
+  } else {
+    const newDescriptionTag = document.createElement('meta');
+    newDescriptionTag.name = 'description';
+    newDescriptionTag.content = meta.description || defaultMeta.description;
+    document.head.appendChild(newDescriptionTag);
+  }
+
+  // Atualizar meta image (para compartilhamento)
+  const imageTag = document.querySelector('meta[property="og:image"]');
+  if (imageTag) {
+    imageTag.setAttribute('content', meta.image || defaultMeta.image);
+  } else {
+    const newImageTag = document.createElement('meta');
+    newImageTag.setAttribute('property', 'og:image');
+    newImageTag.content = meta.image || defaultMeta.image;
+    document.head.appendChild(newImageTag);
+  }
+});
 
 app.mount('#app')
