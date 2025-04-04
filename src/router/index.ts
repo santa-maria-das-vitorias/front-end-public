@@ -65,9 +65,21 @@ const routes = [
     },
   },
   {
+    path: '/eventos',
+    name: 'Eventos',
+    component:  () => import('@/views/ComingView.vue'),
+    props: true,
+  },
+  {
     path: '/artigos',
     name: 'Artigos',
     component:  () => import('@/views/Articles/Index.vue'),
+    props: true,
+  },
+  {
+    path: '/suma-teologica',
+    name: 'Suma Teologica',
+    component:  () => import('@/views/ComingView.vue'),
     props: true,
   },
   {

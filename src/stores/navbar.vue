@@ -39,7 +39,7 @@ const megaMenuItems = {
   sobre: [
     { label: 'Sobre a Capela', to: '/sobre' },
     { label: 'Liturgia', to: '/liturgia' },
-    { label: 'Eventos', to: '/Projetos' },
+    { label: 'Eventos', to: '/eventos' },
     { label: 'Fotos', to: '/fotos' },
     { label: 'Padroeiros', to: '/padroeiros' },
     { label: 'Contato', isModal: true },
