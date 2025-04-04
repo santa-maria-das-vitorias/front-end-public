@@ -13,3 +13,4 @@ import Footer from './stores/footer.vue';
   
 </template>
 
+<!-- teste -->
