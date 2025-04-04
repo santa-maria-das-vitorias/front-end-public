@@ -65,31 +65,9 @@ const routes = [
     },
   },
   {
-    path: '/carta-dos-cardeais-ottaviani-e-bacci-contra-a-promulgacao-da-missa-nova',
-    name: 'Carta dos Cardeais Ottaviani e Bacci',
-    component: () => import('@/views/CartaView.vue'),
-    meta: {
-      title: 'Carta dos Cardeais Ottaviani e Bacci - Capela Santa Maria das Vitórias',
-      description: 'Leia a carta dos Cardeais Ottaviani e Bacci contra a promulgação da Missa Nova.',
-      image: '/carta-share-image.jpg',
-    },
-  },
-  {
     path: '/artigos',
     name: 'Artigos',
     component:  () => import('@/views/Articles/Index.vue'),
-    props: true,
-  },
-  {
-    path: '/projetos',
-    name: 'Projetos',
-    component:  () => import('@/views/ComingView.vue'),
-    props: true,
-  },
-  {
-    path: '/suma-teologica',
-    name: 'Suma Teologica',
-    component:  () => import('@/views/ComingView.vue'),
     props: true,
   },
   {
