@@ -39,8 +39,9 @@ const megaMenuItems = {
   sobre: [
     { label: 'Sobre a Capela', to: '/sobre' },
     { label: 'Liturgia', to: '/liturgia' },
-    { label: 'Eventos', to: '/Projetos' },
+    { label: 'Eventos', to: '/eventos' },
     { label: 'Fotos', to: '/fotos' },
+    { label: 'Padroeiros', to: '/padroeiros' },
     { label: 'Contato', isModal: true },
   ],
 };
@@ -119,25 +120,57 @@ onUnmounted(() => {
         <!-- Nav Links -->
         <div class="hidden md:flex items-center gap-6">
           <div v-for="link in navLinks" :key="link.to" class="relative group">
-            <RouterLink v-if="!link.hasMegaMenu" :to="link.to" class="text-sm hover:text-primary-500 transition-all">
+            <RouterLink
+              v-if="!link.hasMegaMenu"
+              :to="link.to"
+              class="text-sm hover:text-primary-500 transition-all"
+            >
               {{ link.label }}
             </RouterLink>
-            <div v-else>
-              <span class="text-sm cursor-pointer hover:text-primary-500 transition-all">{{ link.label }}</span>
-              
+            <div v-else class="relative">
+              <span
+                class="text-sm cursor-pointer hover:text-primary-500 transition-all"
+              >
+                {{ link.label }}
+              </span>
+
               <!-- MegaMenu -->
-              <div class="absolute right-0 top-8 z-20 hidden group-hover:block bg-white shadow-lg rounded-lg p-4 min-w-64">
+              <div
+                class="absolute right-0 top-full z-20 hidden group-hover:flex bg-white shadow-lg rounded-lg p-4 min-w-64"
+              >
                 <ul>
-                  <li v-for="item in megaMenuItems[link.label.toLowerCase() as 'artigos' | 'sobre']" :key="item.label || item.to" 
-                      class="py-2 px-4 hover:bg-gray-100 rounded">
-                    <ContactModal v-if="'isModal' in item && item.isModal" type="link" linkClass="text-primary-500 hover:underline block w-full" />
-                    <RouterLink v-else-if="item.to" :to="item.to" class="block w-full">{{ item.label }}</RouterLink>
+                  <li
+                    v-for="item in megaMenuItems[link.label.toLowerCase() as 'artigos' | 'sobre']"
+                    :key="item.label || item.to"
+                    class="py-2 px-4 hover:bg-gray-100 rounded"
+                  >
+                    <ContactModal
+                      v-if="'isModal' in item && item.isModal"
+                      type="link"
+                      linkClass="text-primary-500 hover:underline block w-full"
+                    />
+                    <RouterLink
+                      v-else-if="item.to"
+                      :to="item.to"
+                      class="block w-full"
+                    >
+                      {{ item.label }}
+                    </RouterLink>
                   </li>
-                  
+
                   <!-- Dynamic categories for 'Artigos' -->
-                  <li v-if="link.label === 'Artigos'" v-for="category in categories" :key="category.id" 
-                      class="py-2 px-4 hover:bg-gray-100 rounded">
-                    <RouterLink :to="`/artigos/${category.slug}/`" class="block w-full">{{ category.title }}</RouterLink>
+                  <li
+                    v-if="link.label === 'Artigos'"
+                    v-for="category in categories"
+                    :key="category.id"
+                    class="py-2 px-4 hover:bg-gray-100 rounded"
+                  >
+                    <RouterLink
+                      :to="`/artigos/${category.slug}/`"
+                      class="block w-full"
+                    >
+                      {{ category.title }}
+                    </RouterLink>
                   </li>
                 </ul>
               </div>

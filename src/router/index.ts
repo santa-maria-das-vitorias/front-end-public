@@ -17,43 +17,63 @@ const routes = [
   {
     path: '/',
     name: 'Início',
-    component: () => import('@/views/HomeView.vue')
+    component: () => import('@/views/HomeView.vue'),
+    meta: {
+      title: 'Início - Capela Santa Maria das Vitórias',
+      description: 'Bem-vindo à página inicial da Capela Santa Maria das Vitórias.',
+      image: '/home-share-image.jpg',
+    },
   },
   {
     path: '/sobre',
     name: 'Sobre',
-    component: () => import('@/views/AboutView.vue')
+    component: () => import('@/views/AboutView.vue'),
+    meta: {
+      title: 'Sobre - Capela Santa Maria das Vitórias',
+      description: 'Saiba mais sobre a história da Capela Santa Maria das Vitórias.',
+      image: '/about-share-image.jpg',
+    },
   },
   {
     path: '/padroeiros',
     name: 'Patronos',
-    component: () => import('@/views/PadroeirosView.vue')
+    component: () => import('@/views/PadroeirosView.vue'),
+    meta: {
+      title: 'Padroeiros - Capela Santa Maria das Vitórias',
+      description: 'Conheça os padroeiros da Capela Santa Maria das Vitórias.',
+      image: '/patronos-share-image.jpg',
+    },
   },
   {
     path: '/liturgia',
     name: 'Liturgia',
-    component: () => import('@/views/LiturgiaView.vue')
+    component: () => import('@/views/LiturgiaView.vue'),
+    meta: {
+      title: 'Liturgia - Capela Santa Maria das Vitórias',
+      description: 'Acompanhe a liturgia da Capela Santa Maria das Vitórias.',
+      image: '/liturgia-share-image.jpg',
+    },
   },
   {
     path: '/politica-de-privacidade',
     name: 'Política de Privacidade',
-    component: () => import('@/views/PoliticaView.vue')
+    component: () => import('@/views/PoliticaView.vue'),
+    meta: {
+      title: 'Política de Privacidade - Capela Santa Maria das Vitórias',
+      description: 'Leia nossa política de privacidade.',
+      image: '/privacy-policy-share-image.jpg',
+    },
   },
   {
-    path: '/carta-dos-cardeais-ottaviani-e-bacci-contra-a-promulgacao-da-missa-nova',
-    name: 'Carta dos Cardeais Ottaviani e Bacci contra a promulgação da Missa Nova',
-    component: () => import('@/views/CartaView.vue')
+    path: '/eventos',
+    name: 'Eventos',
+    component:  () => import('@/views/ComingView.vue'),
+    props: true,
   },
   {
     path: '/artigos',
     name: 'Artigos',
     component:  () => import('@/views/Articles/Index.vue'),
-    props: true,
-  },
-  {
-    path: '/projetos',
-    name: 'Projetos',
-    component:  () => import('@/views/ComingView.vue'),
     props: true,
   },
   {
