@@ -6,7 +6,7 @@
       <img 
         src="/about/foto-capela.jpg" 
         alt="Quem somos" 
-        class="w-full lg:max-w-96 lg:w-1/2 aspect-[8/1] lg:aspect-square lg:rounded-full object-cover"
+        class="w-full lg:max-w-96 lg:w-1/2 aspect-[8/1] mb-10 lg:mb-0 lg:aspect-square lg:rounded-full object-cover"
       />
       <div class="w-full lg:w-1/2">
         <div class="flex flex-row gap-5 mb-5">
@@ -20,14 +20,14 @@
           A Associação Civil Santa Maria das Vitórias tem por fim promover a evangelização através da divulgação da liturgia romana tradicional, bem como apresentar os valores da cultura católica publicando resenhas, seletas e crônicas que focalizem temas filosóficos, teológicos, históricos e literários. Nossa Associação construiu uma capela em estilo barroco dedicada a Santa Maria das Vitórias onde se celebra como rito exclusivo a missa romana tradicional, também conhecida como missa de São Pio V ou missa tridentina.
         </p>
 
-        <div class="w-fit space-x-5 mt-4">
-          <a href="/sobre">
-            <button class="btn-primary">
+        <div class="w-full flex flex-col md:flex-row md:items-start md:justify-start gap-2 mt-4">
+          <a href="/sobre" class="w-full md:w-fit">
+            <button class="btn-primary w-full md:w-fit">
               Saiba mais
             </button>
           </a>
-          <a href="https://www.paypal.com/ncp/payment/TYNYLJQ33BF9U" target="_blank" rel="noopener">
-            <button class="btn-ghost">
+          <a href="https://www.paypal.com/ncp/payment/TYNYLJQ33BF9U" target="_blank" rel="noopener" class="w-full md:w-fit">
+            <button class="btn-ghost w-full md:w-fit">
               <i class="pi pi-paypal" /> Doe com PayPal
             </button>
           </a>
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-4 lg:gap-0">
         <div 
           v-for="padroeiro in padroeiros" 
           :key="padroeiro.name" 
@@ -97,7 +97,7 @@
       <div class="flex flex-row gap-5">
         <span class="block w-1 bg-primary-500"></span>
         <div class="text-left">
-          <h1 class="text-4xl font-bold relative">Artigos</h1>
+          <h1 class="text-4xl font-bold relative">Confrarias</h1>
         </div>
       </div>
       <EventosSlider />
@@ -112,7 +112,7 @@
         <img src="/home/ornamento-topo.svg" alt="ornamentos em arabesco" class="w-28 h-14 mx-auto rotate-180">
       </div>
 
-      <div class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-6 gap-6 mt-14">
+      <div class="grid md:grid-cols-2 grid-cols-2 lg:grid-cols-6 gap-6 mt-14">
         <div v-for="homens in homens" :key="homens.image" class="flex flex-col items-center justify-center">
           <img :src="homens.image" class="w-48 aspect-square rounded-full" />
           <p class="text-center font-bold">{{ homens.name }}</p>
